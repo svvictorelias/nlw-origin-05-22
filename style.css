@@ -8,7 +8,10 @@
   --primary-color: hsl(170, 100%, 26%);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(219, 9%, 31%);
+  --brand-beige: hsl(39, 100%, 97%);
+  --brand-light: hsl(148, 23%, 89%);
   font-size: 62.5%; /* 1rem = 10px*/
+  --nav-height: 7.2rem
 }
 body {
   font-family: 'DM Sans', Arial, Helvetica, sans-serif;
@@ -16,31 +19,33 @@ body {
 
   text-align: center;
 }
-header {
+.wrapper{
   width: 37.5rem;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 4.1rem;
+  margin-inline: auto;
+  padding-inline: 2.4rem;
 }
-h4 {
+header {
+  margin-top: calc(4.1rem + var(--nav-height));
+}
+header h4 {
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: 1.6rem;
 }
-h1 {
+header h1 {
   font-size: 3.4rem;
   color: var(--headline);
   line-height: 130%;
   margin-bottom: 2.4rem;
 }
-p {
+header p {
   font-size: 1.8rem;
   line-height: 150%;
   color: var(--paragraph);
   margin-bottom: 3.2rem;
 }
 
-button {
+header button {
   background-color: var(--primary-color);
   border: none;
   border-radius: 4rem;
@@ -57,4 +62,72 @@ button {
   gap: 1.6rem;
   margin-right: auto;
   margin-left: auto;
+}
+header img{
+  display: block;
+  margin-inline: auto;
+  width: 26.4rem;
+  object-position: 0 2rem;
+}
+header::before{
+  content: '';
+  width: 100vw;
+  height: calc(108rem + var(--nav-height));
+  background-color: var(--brand-light);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+}
+.stats {
+  width: 32.7rem;
+  height: 47rem;
+  padding-block: 4rem;
+  margin-inline: auto;
+  background-color: var(--brand-beige);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6rem;
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+}
+.stats h3 {
+  font-size: 4.8rem;
+  color: var(--headline);
+  line-height: 130%;
+  margin-bottom: 0.4rem;
+}
+.stats p {
+  margin: 0;
+  color: var(--primary-color);
+  line-height: 150%;
+}
+
+nav{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: var(--nav-height);
+}
+nav.scroll{
+  background-color: var(--primary-color);
+  width: 100vw;
+  transition: all 0.3s;
+}
+nav.scroll svg:nth-child(1) path{
+  fill: white;
+}
+
+nav.scroll svg:nth-child(2) path{
+  stroke: white;
+}
+nav .wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
