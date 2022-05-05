@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 :root {
@@ -11,18 +12,27 @@
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
   font-size: 62.5%; /* 1rem = 10px*/
-  --nav-height: 7.2rem
+  --nav-height: 7.2rem;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 body {
   font-family: 'DM Sans', Arial, Helvetica, sans-serif;
   font-size: 1.6rem; /*1.6rem = 16px*/
 
   text-align: center;
+  overflow: overlay;
 }
-.wrapper{
+.wrapper {
   width: 37.5rem;
   margin-inline: auto;
   padding-inline: 2.4rem;
+}
+ul{
+  list-style: none;
 }
 header {
   margin-top: calc(4.1rem + var(--nav-height));
@@ -63,15 +73,15 @@ header button {
   margin-right: auto;
   margin-left: auto;
 }
-header img{
+header img {
   display: block;
   margin-inline: auto;
   width: 26.4rem;
   object-position: 0 2rem;
 }
-header::before{
+header::before {
   content: '';
-  width: 100vw;
+  width: 100%;
   height: calc(108rem + var(--nav-height));
   background-color: var(--brand-light);
   display: block;
@@ -79,7 +89,6 @@ header::before{
   top: 0;
   left: 0;
   z-index: -1;
-
 }
 .stats {
   width: 32.7rem;
@@ -106,7 +115,7 @@ header::before{
   line-height: 150%;
 }
 
-nav{
+nav {
   display: flex;
   position: fixed;
   top: 0;
@@ -114,20 +123,113 @@ nav{
   transform: translateX(-50%);
   height: var(--nav-height);
 }
-nav.scroll{
+nav.scroll {
   background-color: var(--primary-color);
   width: 100vw;
   transition: all 0.3s;
 }
-nav.scroll svg:nth-child(1) path{
+nav.scroll svg:nth-child(1) path {
   fill: white;
 }
 
-nav.scroll svg:nth-child(2) path{
+nav.scroll button path {
   stroke: white;
 }
-nav .wrapper{
+
+nav button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+body.menu-expanded{
+  overflow: hidden;
+}
+
+body.menu-expanded>:not(nav){
+  display: none;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu{
+  opacity: 0;
+  visibility: hidden;
+}
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded .menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  width: 100vw;
+  height: 100vh;
+  padding-top: var(--nav-height);
+}
+
+body.menu-expanded nav{
+  position: relative;
+}
+
+.menu ul:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-top: 6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
+.menu ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.menu .button{
+  background-color: white;
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--primary-color);
+  display: inline-block;
+  padding: 16px 32px;
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+}
+
+.social-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:3.2rem
+}
+
+body.menu-expanded .logo,
+body.menu-expanded button{
+  position: relative;
+  z-index: 100;
+}
+
+body.menu-expanded .logo path {
+  fill: white;
+}
+
+body.menu-expanded button path {
+  stroke: white;
 }
