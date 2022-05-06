@@ -12,6 +12,7 @@
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
   --bg-light: hsl(180, 14%, 97%);
+  --brand-dark: hsl(170, 100%, 14%);
   font-size: 62.5%; /* 1rem = 10px*/
   --nav-height: 7.2rem;
 }
@@ -39,7 +40,7 @@ ul {
   list-style: none;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -47,7 +48,7 @@ section {
   padding-block: 10rem;
 }
 
-section header h4{
+section header h4 {
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: 1.6rem;
@@ -56,23 +57,44 @@ section header h4{
   line-height: 150%;
   letter-spacing: 0.08rem;
 }
-section header h2{
+section header h2 {
   font-size: 3rem;
   line-height: 3.9rem;
   color: var(--headline);
 }
-section header h1{
+section header h1 {
   font-size: 3.4rem;
   color: var(--headline);
   line-height: 130%;
   margin-bottom: 2.4rem;
-
 }
-section .content p{
+section .content p {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 150%;
   color: var(--paragraph);
+}
+
+.button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4rem;
+  margin-bottom: 6rem;
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  text-decoration: none;
+  transition: background 200ms;
+}
+.button:hover {
+  background-color: var(--brand-dark);
 }
 
 #home {
@@ -86,24 +108,6 @@ section .content p{
   margin-bottom: 3.2rem;
 }
 
-#home button {
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 4rem;
-  margin-bottom: 6rem;
-  height: 6.2rem;
-  width: 26.3rem;
-  color: white;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  margin-right: auto;
-  margin-left: auto;
-}
 #home img {
   display: block;
   margin-inline: auto;
@@ -120,6 +124,9 @@ section .content p{
   top: 0;
   left: 0;
   z-index: -1;
+}
+#home .button {
+  margin-inline: auto;
 }
 #home .stats {
   width: 32.7rem;
@@ -156,7 +163,7 @@ nav {
 }
 nav.scroll {
   background-color: var(--primary-color);
-  
+
   transition: all 0.3s;
 }
 nav.scroll .logo path {
@@ -216,7 +223,6 @@ body.menu-expanded .menu {
   transform: translateY(0);
 }
 
-
 .menu ul:nth-child(1) {
   display: flex;
   flex-direction: column;
@@ -268,7 +274,7 @@ body.menu-expanded .logo path {
 body.menu-expanded button path {
   stroke: white;
 }
-#services header h2{
+#services header h2 {
   margin-bottom: 6rem;
 }
 
@@ -290,16 +296,65 @@ body.menu-expanded button path {
   margin-block: 1.6rem;
 }
 
-#about{
+#about {
   text-align: left;
   background-color: var(--brand-beige);
 }
 
-#about header h2{
+#about header h2 {
   margin-bottom: 2.4rem;
 }
 
-#about .content p{
+#about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+}
+
+#contact {
+  text-align: left;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  padding-block: 6rem;
+  text-align: left;
+  color: white;
+}
+footer .logo {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+footer .logo path {
+  fill: white;
+}
+
+footer p {
+  color: var(--brand-beige);
+  line-height: 2;
+  margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+  justify-content: flex-start;
 }
