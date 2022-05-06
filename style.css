@@ -39,24 +39,46 @@ ul {
   list-style: none;
 }
 
+img{
+  max-width: 100%;
+}
+
 section {
   padding-block: 10rem;
+}
+
+section header h4{
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+}
+section header h2{
+  font-size: 3rem;
+  line-height: 3.9rem;
+  color: var(--headline);
+}
+section header h1{
+  font-size: 3.4rem;
+  color: var(--headline);
+  line-height: 130%;
+  margin-bottom: 2.4rem;
+
+}
+section .content p{
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: var(--paragraph);
 }
 
 #home {
   padding-top: calc(4.1rem + var(--nav-height));
 }
-#home h4 {
-  font-size: 1.4rem;
-  color: var(--primary-color);
-  margin-bottom: 1.6rem;
-}
-#home h1 {
-  font-size: 3.4rem;
-  color: var(--headline);
-  line-height: 130%;
-  margin-bottom: 2.4rem;
-}
+
 #home p {
   font-size: 1.8rem;
   line-height: 150%;
@@ -128,17 +150,16 @@ nav {
   display: flex;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   height: var(--nav-height);
   z-index: 100;
+  width: 100vw;
 }
 nav.scroll {
   background-color: var(--primary-color);
-  width: 100vw;
+  
   transition: all 0.3s;
 }
-nav.scroll svg:nth-child(1) path {
+nav.scroll .logo path {
   fill: white;
 }
 
@@ -163,7 +184,7 @@ body.menu-expanded {
 }
 
 body.menu-expanded > :not(nav) {
-  display: none;
+  visibility: hidden;
 }
 
 .menu,
@@ -195,9 +216,6 @@ body.menu-expanded .menu {
   transform: translateY(0);
 }
 
-body.menu-expanded nav {
-  position: relative;
-}
 
 .menu ul:nth-child(1) {
   display: flex;
@@ -250,20 +268,7 @@ body.menu-expanded .logo path {
 body.menu-expanded button path {
   stroke: white;
 }
-
-#services header h4 {
-  font-size: 1.4rem;
-  line-height: 150%;
-  letter-spacing: 0.08rem;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  margin-bottom: 1.6rem;
-}
-
-#services header h2 {
-  font-size: 3rem;
-  line-height: 3.9rem;
-  color: var(--headline);
+#services header h2{
   margin-bottom: 6rem;
 }
 
@@ -283,4 +288,18 @@ body.menu-expanded button path {
 
 #services .card h3 {
   margin-block: 1.6rem;
+}
+
+#about{
+  text-align: left;
+  background-color: var(--brand-beige);
+}
+
+#about header h2{
+  margin-bottom: 2.4rem;
+}
+
+#about .content p{
+  margin-top: 2.4rem;
+  margin-bottom: 6rem;
 }
