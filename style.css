@@ -11,11 +11,11 @@
   --paragraph: hsl(219, 9%, 31%);
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
-  --bg-light: hsl(180,14%,97%);
+  --bg-light: hsl(180, 14%, 97%);
   font-size: 62.5%; /* 1rem = 10px*/
   --nav-height: 7.2rem;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 html,
@@ -131,6 +131,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   height: var(--nav-height);
+  z-index: 100;
 }
 nav.scroll {
   background-color: var(--primary-color);
@@ -177,7 +178,7 @@ body.menu-expanded .close-menu {
   visibility: visible;
 }
 
-.menu{
+.menu {
   transform: translateY(100%);
 }
 
