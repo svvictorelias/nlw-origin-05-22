@@ -358,3 +358,18 @@ footer p {
 footer .social-links {
   justify-content: flex-start;
 }
+
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.7s;
+}
