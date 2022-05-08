@@ -33,7 +33,7 @@ body {
   overflow: overlay;
 }
 .wrapper {
-  width: 37.5rem;
+  width: min(50rem, 100%);
   margin-inline: auto;
   padding-inline: 2.4rem;
 }
@@ -98,28 +98,26 @@ section .content p {
   background-color: var(--brand-dark);
 }
 
-#services .card circle{
+#services .card circle {
   fill: var(--brand-light);
 }
 
 #navigation .logo path[fill*='#00856F'],
-#backToTopButton circle{
+#backToTopButton circle {
   fill: var(--primary-color);
 }
 body.menu-expanded #navigation .logo path,
-#navigation.scroll .logo path{
+#navigation.scroll .logo path {
   fill: white;
 }
 
 button.open-menu path[stroke*='#00856F'],
-#contact li path{
+#contact li path {
   stroke: var(--primary-color);
 }
-#navigation.scroll button.open-menu path[stroke*='#00856F']{
+#navigation.scroll button.open-menu path[stroke*='#00856F'] {
   stroke: white;
 }
-
-
 
 #home {
   padding-top: calc(4.1rem + var(--nav-height));
@@ -153,7 +151,7 @@ button.open-menu path[stroke*='#00856F'],
   margin-inline: auto;
 }
 #home .stats {
-  width: 32.7rem;
+  width: 100%;
   height: 47rem;
   padding-block: 4rem;
   margin-inline: auto;
@@ -196,6 +194,10 @@ nav button {
   border: none;
   cursor: pointer;
 }
+nav .menu,
+nav .close-menu{
+  position: fixed;
+}
 
 nav .wrapper {
   display: flex;
@@ -228,7 +230,6 @@ body.menu-expanded .close-menu {
 }
 
 body.menu-expanded .menu {
-  position: fixed;
   top: 0;
   left: 0;
   background-color: var(--primary-color);
@@ -270,7 +271,7 @@ body.menu-expanded .menu {
   margin-top: 4.8rem;
   margin-bottom: 8rem;
 }
-.menu .button:hover{
+.menu .button:hover {
   background-color: var(--primary-color);
   color: white;
   filter: brightness(1.3);
@@ -313,7 +314,6 @@ body.menu-expanded button path {
   border: 1px solid var(--brand-light);
   border-radius: 0.6rem;
 }
-
 
 #services .card h3 {
   margin-block: 1.6rem;
